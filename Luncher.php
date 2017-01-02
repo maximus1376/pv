@@ -1,5 +1,5 @@
 <?php
-define('BOT_TOKEN', '**TOKEN**');
+define('BOT_TOKEN', '308698461:AAEp2JH87OWH9_ZRzPDCzp-7c5sHpGxtOoY');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
 function apiRequestWebhook($method, $parameters) {
@@ -115,7 +115,7 @@ function processMessage($message) {
   // process incoming message
   $boolean = file_get_contents('booleans.txt');
   $booleans= explode("\n",$boolean);
-  $admin = **ADMIN**;
+  $admin = 187580282;
   $message_id = $message['message_id'];
   $rpto = $message['reply_to_message']['forward_from']['id'];
   $chat_id = $message['chat']['id'];
@@ -159,7 +159,7 @@ Get Out Of Here Idiot🖕
     else{
         apiRequest("sendphoto", array('chat_id' => $rpto, "photo" => $substtr));
     }
-	apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "🗣پیام شما ارسال شد. " ,"parse_mode" =>"HTML"));
+	apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "🗣/n dev buy @Hosi_dark پیام شما ارسال شد. " ,"parse_mode" =>"HTML"));
     
 }  else if ($chat_id == $admin && $booleans[0] == "true") {
     
